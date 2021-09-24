@@ -18,7 +18,7 @@
 #if defined(ENABLE_LOG_TRACE)
   #include "log_trace.h"
 
-  #define TAG_NAME     "UTIL_GIO"
+  #define TAG_NAME     "DEV_GIO"
 
   #define lDbg(...)        ltMsg(TAG_NAME, LT_DEBUG, __FILE__, __LINE__, __VA_ARGS__)
   #define lWrn(...)        ltMsg(TAG_NAME, LT_WARN,  __FILE__, __LINE__, __VA_ARGS__)
@@ -112,7 +112,7 @@ int gioDevOpen(void)
 {
     int fd  = -1;
 
-    fd = open(GIO_DEV, O_RDWR);
+    fd = open(GIO_DEV, O_RDWR | O_SYNC);
     if (fd == -1) {
         lErr("%s open() failed...", GIO_DEV);
     }

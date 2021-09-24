@@ -1,3 +1,5 @@
 Linux device I/O utilities
-./gio : GPIO device(/dev/gpiochip0)
+
+1. gio    : GPIO device(/dev/gpiochip0)
+2. devmem : memory device(/dev/mem)
 
